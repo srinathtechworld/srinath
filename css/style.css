@@ -1,8 +1,9 @@
+/* === Root Variables === */
 :root {
   --primary-color: #27ae60; /* Main green accent */
   --background-color: #eafaf1; /* Light green background */
   --text-color: #1b2e1b; /* Dark green for readability */
-  --header-bg: #1e8449; /* Header green */
+  --header-bg: #1e8449;
   --header-text: #ffffff;
 }
 
@@ -14,7 +15,7 @@
   --header-text: #f1f1f1;
 }
 
-/* Body */
+/* === Body === */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
@@ -22,55 +23,173 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
-/* Header */
-header { 
-  background-color: var(--header-bg); 
-  color: var(--header-text); 
-  padding: 20px 0; 
-  text-align: center; 
-  position: sticky; 
-  top: 0; 
-  z-index: 1000; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+/* === Scroll Progress Bar === */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: var(--primary-color);
+  width: 0%;
+  z-index: 2000;
 }
-nav a { color: var(--header-text); margin: 0 15px; text-decoration: none; font-weight: bold; }
+
+/* === Header === */
+header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 20px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+header h1 { margin: 0; font-size: 2em; }
+nav a {
+  color: var(--header-text);
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s;
+}
+nav a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s;
+  width: 0;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+nav a:hover::after { width: 100%; }
 nav a:hover { color: var(--primary-color); }
 
-/* Section Gradients - Green Theme */
+/* === Sections === */
+section {
+  border-radius: 10px;
+  padding: 100px 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+  color: var(--text-color);
+}
+
+/* Green Gradients per section */
 section#personal { background: linear-gradient(135deg, #a8e6cf, #56ab2f); }
 section#technical { background: linear-gradient(135deg, #caffbf, #2ecc71); }
 section#social { background: linear-gradient(135deg, #d9f9d9, #27ae60); }
 section#politics { background: linear-gradient(135deg, #e0f7e5, #145a32); }
 
-section { 
-  border-radius: 10px; 
-  padding: 100px 20px; 
-  max-width: 1000px; 
-  margin: 40px auto; 
-  color: #1b2e1b; 
-  opacity: 0; 
-  transform: translateY(50px); 
-  transition: all 1s ease; 
-}
-
-/* Dark mode section overrides */
+/* Dark mode gradients */
 [data-theme="dark"] section#personal { background: linear-gradient(135deg, #1a4721, #2ecc71); color: #f1f1f1; }
 [data-theme="dark"] section#technical { background: linear-gradient(135deg, #145a32, #27ae60); color: #f1f1f1; }
 [data-theme="dark"] section#social { background: linear-gradient(135deg, #0b3d1a, #2ecc71); color: #f1f1f1; }
 [data-theme="dark"] section#politics { background: linear-gradient(135deg, #0d1f0d, #145a32); color: #f1f1f1; }
 
-/* Buttons & links */
-.btn, .theme-toggle, #backToTop { background-color: var(--primary-color); color: white; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+/* Section Headings & Text */
+section h2 { text-align: center; margin-bottom: 20px; }
+section p { text-align: center; max-width: 700px; margin: auto; }
+
+/* Profile Image */
+.profile-img {
+  display: block;
+  margin: 20px auto;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  transition: transform 0.5s;
+}
+.profile-img:hover { transform: scale(1.05); }
+
+/* Buttons */
+.btn, .theme-toggle, #backToTop {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  text-align: center;
+}
 .btn:hover, .theme-toggle:hover, #backToTop:hover { background-color: #2ecc71; transform: scale(1.05); }
 
-/* Profile image */
-.profile-img { border: 4px solid var(--primary-color); }
-.profile-img:hover { transform: scale(1.05); }
+/* Social Icons */
+.social-icons {
+  text-align: center;
+  margin-top: 20px;
+}
+.social-icons a {
+  color: var(--header-bg);
+  margin: 0 10px;
+  font-size: 1.5em;
+  display: inline-block;
+  transition: transform 0.3s, color 0.3s;
+}
+.social-icons a:hover { color: var(--primary-color); transform: rotate(15deg) scale(1.2); }
+
+/* Forms */
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+input, textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  resize: vertical;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+input:focus, textarea:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 5px rgba(39, 174, 96, 0.5); }
+input[type="submit"] { background-color: var(--primary-color); color: white; cursor: pointer; }
+input[type="submit"]:hover { background-color: #2ecc71; }
+
+/* Typing Effect */
+.typing {
+  color: var(--primary-color);
+  font-weight: bold;
+  border-right: 2px solid var(--primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 18px;
+  display: none;
+  z-index: 1000;
+}
 
 /* Footer */
 footer { background-color: var(--header-bg); color: var(--header-text); text-align: center; padding: 20px 0; }
+
+/* Fade-in animation */
+section.visible { opacity: 1; transform: translateY(0); transition: all 1s ease; }
+
+/* Responsive */
+@media(max-width: 600px){
+  nav a { display: block; margin: 5px 0; }
+}
