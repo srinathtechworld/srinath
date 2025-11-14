@@ -3,82 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Personal Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>ஸ்ரீநாத்</title>
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
 </head>
-<body data-theme="light">
+<body>
 
   <!-- Scroll Progress Bar -->
   <div id="progress-bar"></div>
 
   <!-- Header -->
   <header>
-    <div class="header-left">
-      <h1>ஸ்ரீநாத்</h1>
-      <div class="typing" id="typing"></div>
-    </div>
-    <div class="header-right">
-      <nav>
-        <a href="#personal">தமிழ்</a>
-        <a href="#technical">Technical</a>
-        <a href="#social">சமூக பார்வை</a>
-        <a href="#politics">Politics</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="theme-toggle" id="themeToggle">Toggle Theme</button>
-    </div>
+    <div class="header-left"><h1>My Website</h1></div>
+    <nav class="header-right">
+      <a href="#personal">தமிழ்</a>
+      <a href="#technical">Technical</a>
+      <a href="#social">சமூக பார்வை</a>
+      <a href="#politics">அரசியல் பார்வை</a>
+    </nav>
+    <button class="theme-toggle">Toggle Theme</button>
   </header>
 
   <!-- Sections -->
   <section id="personal">
     <h2>தமிழ்</h2>
-    <img src="images/profile.jpg" alt="Profile Image" class="profile-img">
-    <p>Hello! I’m [Your Name], a passionate individual who loves learning and exploring new things. I enjoy hobbies like reading, traveling, and creative projects.</p>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-    </div>
+    <img src="images/profile.jpg" alt="Profile" class="profile-img">
+    <p>வணக்கம்! என் பெயர் ஸ்ரீநாத். நான் ஒரு சாப்ட்வேர் இன்ஜினியர் மற்றும் புதிய, திறமையான தீர்வுகளை உருவாக்குவதில் ஆர்வமுள்ளவன். சவாலான பிரச்சனைகளை சமாளிப்பதும், புதிய தொழில்நுட்பங்களை கற்றுக்கொள்வதும், சாப்ட்வேர் உலகில் தொடர்ந்து வளர்வதும் எனக்கு பிடிக்கும்.
+
+தொழில்முறை வாழ்க்கைக்கு வெளியே, தமிழ் இலக்கியத்தில் எனக்கு ஆழ்ந்த ஆர்வம் உள்ளது. கவிதைகள், கதைகள் மற்றும் பாரம்பரிய படைப்புகளை ஆராய்வது என் படைப்பாற்றலை செழிக்கச் செய்கிறது மற்றும் எனது தொழில் மற்றும் வாழ்க்கை அனுபவங்களில் புதிய பார்வைகளை தருகிறது.
+
+நான் தார்க்கிகம் மற்றும் படைப்பாற்றலை சமநிலையில் வைத்திருக்க விரும்புகிறேன் – என் வேலைக்கு பகுப்பாய்வான சிந்தனையைப் பயன்படுத்துவதும், இலக்கியம் மற்றும் கலாச்சார ஆர்வத்தை வளர்ப்பதும். நான் எப்போதும் மற்றவர்களுடன் இணைந்து, பல்வேறு அனுபவங்களிலிருந்து கற்றுக்கொண்டு, தொழிலிலும் தனிப்பட்ட ஆர்வங்களிலும் அர்ப்பணிப்புடன் பங்களிக்கத் தயாராக இருக்கிறேன்.</p>
   </section>
 
   <section id="technical">
     <h2>Technical</h2>
-    <p>I have experience in web development, programming, and technology. I enjoy solving problems, learning new programming languages, and building practical projects.</p>
-    <a href="#personal" class="btn">Back to Top</a>
+    <p> Hi, I’m Srinath Sahadevan, a software developer specializing in backend engineering, distributed systems, and data architecture. I have extensive experience designing and implementing scalable, high-performance systems that handle large volumes of data with reliability and efficiency.
+
+On the backend, I focus on building robust APIs, microservices, and system architectures that power complex applications. My work in distributed systems ensures fault tolerance, scalability, and high availability, while my expertise in data engineering allows me to design pipelines and architectures that transform raw data into actionable insights.
+
+Additionally, I’m an AI/ML architect with experience designing machine learning systems and integrating AI solutions into production environments. I’m passionate about bridging the gap between cutting-edge AI research and practical, production-ready solutions that deliver real-world value.</p>
   </section>
 
   <section id="social">
     <h2>சமூக பார்வை</h2>
-    <p>I enjoy connecting with people, discussing ideas, and being part of communities. Networking and teamwork are important to me.</p>
-    <a href="#personal" class="btn">Back to Top</a>
+    <div class="social-icons">
+      <a href="#">🌐</a>
+      <a href="#">🐦</a>
+      <a href="#">📸</a>
+    </div>
   </section>
 
-  <section id="Politics">
+  <section id="politics">
     <h2>அரசியல் பார்வை</h2>
-    <p>I keep myself informed about political developments and civic issues. I value fairness, democracy, and active engagement in society.</p>
-    <a href="#personal" class="btn">Back to Top</a>
+    <p>Sharing insights and opinions about current political topics.</p>
   </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Send me a message using the form below. I’ll get back to you as soon as possible!</p>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="name" placeholder="Srinath Sahadevan" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <input type="submit" value="Send Message">
-    </form>
-  </section>
-
+  <!-- Footer -->
   <footer>
-    &copy; 2025 [Your Name]. All rights reserved.
+    <p>&copy; 2025 srinath's Website</p>
   </footer>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
+  <!-- Back to Top -->
+  <button id="backToTop">↑</button>
 
-  <script src="js/script.js"></script>
 </body>
 </html>
